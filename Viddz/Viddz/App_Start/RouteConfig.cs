@@ -13,6 +13,11 @@ namespace Viddz
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            //routes descend from specific to generic
+          
+            //default route
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
