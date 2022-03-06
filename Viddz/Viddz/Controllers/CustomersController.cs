@@ -11,23 +11,38 @@ namespace Viddz.Controllers
 {
     public class CustomersController : Controller
     {
-        // GET: Customers
-        private IEnumerable<Customer> GetCustomers()
-        { return new List<Customer>
-            {
-                new Customer { Id = 1, Name = "Jally" },
-                new Customer { Id = 2, Name = "Hobo" }
-            }; 
+
+        private ApplicationDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+            
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
+
+        // GET: Customers
+        //private IEnumerable<Customer> GetCustomers()
+        //{ return new List<Customer>
+        //    {
+        //        new Customer { Id = 1, Name = "Jally" },
+        //        new Customer { Id = 2, Name = "Hobo" }
+        //    }; 
+        //}
         public ViewResult AllCustomers()
         {
 
-            var customers = GetCustomers();
+            var customers = _context.Customers.ToList();
             return View(customers);
         }
         public ActionResult CustomerInfo(int id)
         {
-            var customers = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customers = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             return View(customers);
 

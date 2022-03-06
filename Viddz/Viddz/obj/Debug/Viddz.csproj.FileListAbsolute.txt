@@ -209,9 +209,13 @@ C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\bin\Microsoft.Owin.Security.Twit
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.InitialModel.resources
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.csproj.GenerateResource.cache
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.csproj.CopyComplete
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.dll
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.pdb
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.AddMembershipType.resources
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.PopulateMembershipTypes.resources
+C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.ApplyAnnotationsToCustomerName.resources
 C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.csprojAssemblyReference.cache
-C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.Migrations.InitialModel.resources
-C:\Users\ericb\Desktop\ASPMVC\Viddz\Viddz\Viddz\obj\Debug\Viddz.csproj.GenerateResource.cache
