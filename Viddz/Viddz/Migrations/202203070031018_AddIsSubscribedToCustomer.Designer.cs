@@ -7,13 +7,13 @@ namespace Viddz.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddMembershipType : IMigrationMetadata
+    public sealed partial class AddIsSubscribedToCustomer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMembershipType));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddIsSubscribedToCustomer));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203060346001_AddMembershipType"; }
+            get { return "202203070031018_AddIsSubscribedToCustomer"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,6 +28,31 @@ namespace Viddz.Controllers
 
 
         // GET: Customers
+
+
+        public ViewResult AllCustomers()
+        {
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            return View(customers);
+        }
+
+        public ActionResult CustomerInfo(int id)
+        {
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
+
+            if(customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(customer);
+
+        }
+
+
+
+
+
         //private IEnumerable<Customer> GetCustomers()
         //{ return new List<Customer>
         //    {
@@ -34,18 +60,5 @@ namespace Viddz.Controllers
         //        new Customer { Id = 2, Name = "Hobo" }
         //    }; 
         //}
-        public ViewResult AllCustomers()
-        {
-
-            var customers = _context.Customers.ToList();
-            return View(customers);
-        }
-        public ActionResult CustomerInfo(int id)
-        {
-            var customers = _context.Customers.SingleOrDefault(c => c.Id == id);
-
-            return View(customers);
-
-        }
     }
 }

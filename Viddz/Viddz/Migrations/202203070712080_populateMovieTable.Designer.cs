@@ -7,13 +7,13 @@ namespace Viddz.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class populateMovieTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(populateMovieTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203060320171_InitialModel"; }
+            get { return "202203070712080_populateMovieTable"; }
         }
         
         string IMigrationMetadata.Source

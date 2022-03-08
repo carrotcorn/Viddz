@@ -7,13 +7,13 @@ namespace Viddz.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ApplyAnnotationsToCustomerName : IMigrationMetadata
+    public sealed partial class populateGenreTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ApplyAnnotationsToCustomerName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(populateGenreTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203060408265_ApplyAnnotationsToCustomerName"; }
+            get { return "202203080710278_populateGenreTable"; }
         }
         
         string IMigrationMetadata.Source

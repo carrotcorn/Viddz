@@ -12,19 +12,12 @@ namespace Viddz.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        //public List<Customer> Customers { get; set; }
+        public DateTime? Birthday { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
-        //navigation property
+
+        ////navigation property
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
 
-        public Customer()
-        {
-            
-        }
-        public Customer(string name)
-        {
-            this.Name = name;
-        }
     }
 }

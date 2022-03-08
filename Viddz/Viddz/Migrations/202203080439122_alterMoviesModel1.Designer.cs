@@ -7,13 +7,13 @@ namespace Viddz.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateMembershipTypes : IMigrationMetadata
+    public sealed partial class alterMoviesModel1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateMembershipTypes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(alterMoviesModel1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203060348587_PopulateMembershipTypes"; }
+            get { return "202203080439122_alterMoviesModel1"; }
         }
         
         string IMigrationMetadata.Source
