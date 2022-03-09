@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Viddz.Models;
+using Viddz.ViewModels;
 
 
 
@@ -26,9 +27,26 @@ namespace Viddz.Controllers
             _context.Dispose();
         }
 
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(NewCustomerViewModel viewModel)
+        {
+
+            return View();
+        }
+
 
         // GET: Customers
-
 
         public ViewResult AllCustomers()
         {

@@ -226,13 +226,13 @@ C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.Populate
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.AddMovieModel.resources
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.AddMovieModel1.resources
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.populateMovieTable.resources
+C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.alterMoviesModel.resources
+C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.alterMoviesModel1.resources
+C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.genreTable.resources
+C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.populateGenreTable.resources
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.csproj.GenerateResource.cache
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.csproj.CoreCompileInputs.cache
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.csproj.CopyComplete
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.dll
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.pdb
 C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.csproj.AssemblyReference.cache
-C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.alterMoviesModel.resources
-C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.alterMoviesModel1.resources
-C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.genreTable.resources
-C:\Users\ericb\Desktop\ViddzProj\Viddz\Viddz\obj\Debug\Viddz.Migrations.populateGenreTable.resources
