@@ -14,35 +14,72 @@ namespace Viddz.Controllers
     public class CustomersController : Controller
     {
 
-        private ApplicationDbContext _context;
+        private ApplicationDbContext dbConnect;
 
         public CustomersController()
         {
-            _context = new ApplicationDbContext();
+            dbConnect = new ApplicationDbContext();
             
         }
 
         protected override void Dispose(bool disposing)
         {
-            _context.Dispose();
+            dbConnect.Dispose();
         }
 
         public ActionResult New()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel
+            var membershipTypes = dbConnect.MembershipTypes.ToList();
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
 
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(NewCustomerViewModel viewModel)
+        public ActionResult Save(Customer customer)
         {
+            if (customer.Id == 0)
+            {
+                dbConnect.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = dbConnect.Customers.Single(c => c.Id == customer.Id);
 
-            return View();
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthday = customer.Birthday;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+
+            }
+
+            dbConnect.SaveChanges();
+
+            //redirect to all customers view
+            return RedirectToAction("AllCustomers", "Customers");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = dbConnect.Customers.SingleOrDefault(c => c.Id == id);
+
+            if(customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = dbConnect.MembershipTypes.ToList()
+            };
+
+
+            //specify view name or else will redirect to a non-existing Edit view
+            return View("CustomerForm", viewModel);
         }
 
 
@@ -50,13 +87,13 @@ namespace Viddz.Controllers
 
         public ViewResult AllCustomers()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            var customers = dbConnect.Customers.Include(c => c.MembershipType).ToList();
             return View(customers);
         }
 
         public ActionResult CustomerInfo(int id)
         {
-            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
+            var customer = dbConnect.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
 
             if(customer == null)
             {
@@ -69,14 +106,5 @@ namespace Viddz.Controllers
 
 
 
-
-
-        //private IEnumerable<Customer> GetCustomers()
-        //{ return new List<Customer>
-        //    {
-        //        new Customer { Id = 1, Name = "Jally" },
-        //        new Customer { Id = 2, Name = "Hobo" }
-        //    }; 
-        //}
     }
 }

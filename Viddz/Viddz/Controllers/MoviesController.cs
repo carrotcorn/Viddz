@@ -13,29 +13,29 @@ namespace Viddz.Controllers
 
     {
 
-        private ApplicationDbContext _context;
+        private ApplicationDbContext dbConnect;
 
         public MoviesController()
         {
-            _context = new ApplicationDbContext();
+            dbConnect = new ApplicationDbContext();
 
         }
         protected override void Dispose(bool disposing)
         {
-            _context.Dispose();
+            dbConnect.Dispose();
         }
 
         // GET: Movies/Random
         //CREATE GENRES TABLE
         public ViewResult AllMovies()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
+            var movies = dbConnect.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
         public ActionResult MovieInfo(int id)
         {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            var movie = dbConnect.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
                 return HttpNotFound();
