@@ -25,6 +25,19 @@ namespace Viddz.Controllers
             dbConnect.Dispose();
         }
 
+        public ActionResult New()
+        {
+            var genre = dbConnect.Genres.ToList();
+            var viewModel = new MovieFormViewModel
+            {
+                GenreTypes = genre
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+
+
         // GET: Movies/Random
         //CREATE GENRES TABLE
         public ViewResult AllMovies()
