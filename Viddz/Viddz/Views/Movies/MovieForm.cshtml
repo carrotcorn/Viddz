@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Movie.GenreId)
-        @Html.DropDownListFor(model => model.Movie.GenreId, new SelectList(Model.GenreTypes, "Id", "Name"), "Select Genre", new { @class = "form-control" })
+        @Html.DropDownListFor(model => model.Movie.GenreId, new SelectList(Model.GenreTypes, "Id", "GenreType"), "Select Genre", new { @class = "form-control" })
     </div>
     <div class="form-group">
         <label>

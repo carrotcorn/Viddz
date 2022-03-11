@@ -10,13 +10,14 @@ namespace Viddz.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Your Name")]
         [StringLength(255)]
         public string Name { get; set; }
 
 
         //displays name of the label when referenced in the view
         [Display(Name = "Date of Birth")] //
+        [Min18YearsIfAMember]
         public DateTime? Birthday { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
 

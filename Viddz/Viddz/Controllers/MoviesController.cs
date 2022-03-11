@@ -35,7 +35,44 @@ namespace Viddz.Controllers
 
             return View("MovieForm", viewModel);
         }
+        public ActionResult Edit(int id)
+        {
+            var movie = dbConnect.Movies.SingleOrDefault(m => m.Id == id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                GenreTypes = dbConnect.Genres.ToList()
+            };
+            return View("MovieForm", viewModel);
 
+        }
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                dbConnect.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = dbConnect.Movies.Single(m => m.Id == movie.Id);
+
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+         
+            }
+
+            dbConnect.SaveChanges();
+
+            //redirect to all customers view
+            return RedirectToAction("AllMovies", "Movies");
+        }
 
 
         // GET: Movies/Random
@@ -57,28 +94,28 @@ namespace Viddz.Controllers
         }
 
 
-        [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
-        public ActionResult Edit(int id)
-        {
-            return Content("id=" + id);
-        }
+        //[Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
+        //public ActionResult ByReleaseDate(int year, int month)
+        //{
+        //    return Content(year + "/" + month);
+        //}
+        ////public ActionResult Edit(int id)
+        ////{
+        ////    return Content("id=" + id);
+        ////}
 
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-            {
-                pageIndex = 1;
-            }
-            if (String.IsNullOrWhiteSpace(sortBy))
-            {
-                sortBy = "Name";
-            }
-            return Content(String.Format($"pageIndex={pageIndex}&sortBy={sortBy}"));
-        }
+        //public ActionResult Index(int? pageIndex, string sortBy)
+        //{
+        //    if (!pageIndex.HasValue)
+        //    {
+        //        pageIndex = 1;
+        //    }
+        //    if (String.IsNullOrWhiteSpace(sortBy))
+        //    {
+        //        sortBy = "Name";
+        //    }
+        //    return Content(String.Format($"pageIndex={pageIndex}&sortBy={sortBy}"));
+        //}
 
         //public ActionResult Random()
         //{

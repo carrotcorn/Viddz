@@ -41,6 +41,15 @@ namespace Viddz.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = dbConnect.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
             if (customer.Id == 0)
             {
                 dbConnect.Customers.Add(customer);
